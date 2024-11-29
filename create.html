@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Journey Interaction Chart</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2F4D67;
+      text-transform: uppercase;
+    }
+
+    /* Chart Container */
+    .chart-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border: 2px solid #2F4D67;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 300px;
+      padding: 10px;
+      border-left: 2px solid #333;
+      border-bottom: 2px solid #333;
+      position: relative;
+    }
+
+    /* High and Low Labels */
+    .chart::before {
+      content: "High";
+      position: absolute;
+      top: -20px;
+      left: -40px;
+      transform: rotate(-90deg);
+      font-weight: bold;
+      color: #333;
+    }
+
+    .chart::after {
+      content: "Low";
+      position: absolute;
+      bottom: -20px;
+      left: -40px;
+      transform: rotate(-90deg);
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Bars */
+    .bar {
+      width: 70px;
+      background: linear-gradient(to top, #2F4D67, #3A6582);
+      text-align: center;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px 5px 0 0;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .bar span {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: black;
+      font-size: 1rem;
+    }
+
+    .bar:hover {
+      transform: translateY(-12px);
+      background: linear-gradient(to top, #3A6582, #4A7D9B);
+    }
+
+    /* Labels below bars */
+    .x-axis {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 10px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .x-axis div {
+      text-align: center;
+      width: 70px;
+    }
+
+    /* Footer Note */
+    .footer-note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #666;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Customer Journey Interaction Chart</h1>
+
+  <div class="chart-container">
+    <!-- Chart -->
+    <div class="chart">
+      <!-- Bar for each touchpoint -->
+      <div class="bar" style="height: 80%;">
+        <span>80%</span>
+      </div>
+      <div class="bar" style="height: 60%;">
+        <span>60%</span>
+      </div>
+      <div class="bar" style="height: 90%;">
+        <span>90%</span>
+      </div>
+      <div class="bar" style="height: 70%;">
+        <span>70%</span>
+      </div>
+      <div class="bar" style="height: 50%;">
+        <span>50%</span>
+      </div>
+    </div>
+
+    <!-- Labels for the x-axis (touchpoints) -->
+    <div class="x-axis">
+      <div>Instagram</div>
+      <div>Facebook</div>
+      <div>Twitter</div>
+      <div>Email</div>
+      <div>Call Center</div>
+    </div>
+  </div>
+
+  <p class="footer-note">Customer engagement levels across platforms (High and Low indicators).</p>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Input Bar Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    canvas {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .input-group {
+      margin: 15px 0;
+    }
+    label {
+      margin-right: 10px;
+    }
+    input {
+      width: 60px;
+      padding: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2F4D67; /* Blue Color */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #2F4D67; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <h1>Customer Journey Chart</h1>
+  <canvas id="inputChart"></canvas>
+  
+  <form id="chartForm">
+    <div class="input-group">
+      <label for="step1">Website:</label>
+      <input type="number" id="step1" value="50" min="0" max="100">
+    </div>
+    <div class="input-group">
+      <label for="step2">Mobile App:</label>
+      <input type="number" id="step2" value="70" min="0" max="100">
+    </div>
+    <div class="input-group">
+      <label for="step3">Social Media:</label>
+      <input type="number" id="step3" value="80" min="0" max="100">
+    </div>
+    <div class="input-group">
+      <label for="step4">Email:</label>
+      <input type="number" id="step4" value="60" min="0" max="100">
+    </div>
+    <div class="input-group">
+      <label for="step5">Call Center:</label>
+      <input type="number" id="step5" value="40" min="0" max="100">
+    </div>
+    <button type="button" onclick="updateChart()">Update Chart</button>
+  </form>
+
+  <script>
+    // Initial chart data
+    const initialData = [50, 70, 80, 60, 40];
+    const chartLabels = ["Website", "Mobile App", "Social Media", "Email", "Call Center"];
+    
+    // Chart setup
+    const ctx = document.getElementById("inputChart").getContext("2d");
+    const chart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: chartLabels,
+        datasets: [{
+          label: "Engagement (%)",
+          data: initialData,
+          backgroundColor: [
+            "#FF5733", "#FF8D33", "#FFC300", "#DAF7A6", "#33FF57"
+          ],
+        }],
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+          },
+        },
+      },
+    });
+
+    // Update chart data function
+    function updateChart() {
+      const step1 = document.getElementById("step1").value;
+      const step2 = document.getElementById("step2").value;
+      const step3 = document.getElementById("step3").value;
+      const step4 = document.getElementById("step4").value;
+      const step5 = document.getElementById("step5").value;
+
+      chart.data.datasets[0].data = [step1, step2, step3, step4, step5];
+      chart.update();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff; /* White background */
+    color: #333; /* Darker text for better contrast */
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background: linear-gradient(to right, #2F4D67, #3A617D); /* Rich gradient with blue shades */
+    color: white;
+    padding: 60px 20px;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 1.4rem;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Main Content */
+.main-content {
+    padding: 30px;
+}
+
+/* Use Cases Section */
+.use-cases {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.use-cases h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2F4D67;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.use-case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+/* Use Case Cards */
+.use-case-card {
+    background-color: #F0F4F8; /* Light background for cards */
+    border: 2px solid #2F4D67;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* For logo positioning */
+}
+
+.use-case-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.use-case-card .icon {
+    font-size: 3rem;
+    color: #2F4D67;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+}
+
+/* Add a logo image inside the cards */
+.use-case-card .logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    padding: 5px;
+    border: 1px solid #2F4D67;
+    display: inline-block;
+}
+
+.use-case-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #2F4D67;
+}
+
+.use-case-card p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Action Button */
+.btn-action {
+    background: #2F4D67;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-action:hover {
+    background: #1E364B;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #2F4D67;
+    color: white;
+    padding: 15px 20px;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+/* Footer Text */
+.footer p {
+    margin: 0;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .use-case-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .btn-action {
+        padding: 10px 15px;
+    }
+}
